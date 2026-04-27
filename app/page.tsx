@@ -186,7 +186,7 @@ export default function HomePage() {
               </div>
             </div>
           </div>
-        </section>
+        </motion.section>
 
         <motion.section 
           className="space-y-8"
