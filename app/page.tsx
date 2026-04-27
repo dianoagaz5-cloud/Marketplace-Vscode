@@ -21,8 +21,9 @@ function Card({ title, description, href }: { title: string; description: string
 
 const fadeInUp = {
   initial: { opacity: 0, y: 60 },
-  animate: { opacity: 1, y: 0 },
-  transition: { duration: 0.6 }
+  whileInView: { opacity: 1, y: 0 },
+  transition: { duration: 0.6 },
+  viewport: { once: true, margin: "-100px" }
 };
 
 const stagger = {
@@ -50,6 +51,8 @@ export default function HomePage() {
       >
         <motion.section 
           className="grid gap-10 lg:grid-cols-[1.2fr_0.8fr] lg:items-center"
+          initial="initial"
+          whileInView="whileInView"
           variants={fadeInUp}
         >
           <div className="space-y-6">
@@ -98,6 +101,8 @@ export default function HomePage() {
 
         <motion.section 
           className="space-y-8"
+          initial="initial"
+          whileInView="whileInView"
           variants={fadeInUp}
         >
           <div className="flex items-center justify-between gap-4">
@@ -115,8 +120,10 @@ export default function HomePage() {
               <motion.article 
                 key={product.id} 
                 className="card-surface overflow-hidden"
-                variants={fadeInUp}
+                initial="initial"
+                whileInView="whileInView"
                 whileHover={hoverScale}
+                variants={fadeInUp}
               >
                 <div className="h-56 bg-slate-100">
                   <img src={product.imageUrl} alt={product.title} className="h-full w-full object-cover" />
@@ -137,6 +144,8 @@ export default function HomePage() {
 
         <motion.section 
           className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr]"
+          initial="initial"
+          whileInView="whileInView"
           variants={fadeInUp}
         >
           <div className="space-y-6">
@@ -155,8 +164,10 @@ export default function HomePage() {
                 <motion.div 
                   key={service.id} 
                   className="card-surface p-6"
-                  variants={fadeInUp}
+                  initial="initial"
+                  whileInView="whileInView"
                   whileHover={hoverScale}
+                  variants={fadeInUp}
                 >
                   <p className="text-xs font-semibold uppercase tracking-[0.2em] text-brand-700">{service.category}</p>
                   <h3 className="mt-3 text-xl font-semibold text-slate-900">{service.title}</h3>
@@ -190,6 +201,8 @@ export default function HomePage() {
 
         <motion.section 
           className="space-y-8"
+          initial="initial"
+          whileInView="whileInView"
           variants={fadeInUp}
         >
           <div className="flex items-center justify-between gap-4">
@@ -207,8 +220,10 @@ export default function HomePage() {
               <motion.article 
                 key={ebook.id} 
                 className="card-surface grid gap-4 p-6 sm:grid-cols-[120px_1fr] sm:items-center"
-                variants={fadeInUp}
+                initial="initial"
+                whileInView="whileInView"
                 whileHover={hoverScale}
+                variants={fadeInUp}
               >
                 <img src={ebook.coverUrl} alt={ebook.title} className="h-32 w-full rounded-3xl object-cover sm:h-40 sm:w-32" />
                 <div>
@@ -227,6 +242,8 @@ export default function HomePage() {
 
         <motion.section 
           className="space-y-8"
+          initial="initial"
+          whileInView="whileInView"
           variants={fadeInUp}
         >
           <div className="flex items-center justify-between gap-4">
@@ -243,8 +260,10 @@ export default function HomePage() {
               <motion.div 
                 key={category.name} 
                 className="card-surface p-6"
-                variants={fadeInUp}
+                initial="initial"
+                whileInView="whileInView"
                 whileHover={hoverScale}
+                variants={fadeInUp}
               >
                 <div className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-brand-100 text-2xl">{category.icon}</div>
                 <h3 className="mt-4 text-xl font-semibold text-slate-900">{category.name}</h3>
@@ -256,6 +275,8 @@ export default function HomePage() {
 
         <motion.section 
           className="space-y-8"
+          initial="initial"
+          whileInView="whileInView"
           variants={fadeInUp}
         >
           <div className="flex items-center justify-between gap-4">
@@ -273,8 +294,10 @@ export default function HomePage() {
               <motion.article 
                 key={vendor.id} 
                 className="card-surface overflow-hidden"
-                variants={fadeInUp}
+                initial="initial"
+                whileInView="whileInView"
                 whileHover={hoverScale}
+                variants={fadeInUp}
               >
                 <div className="h-44 bg-slate-100">
                   <img src={vendor.bannerUrl} alt={vendor.name} className="h-full w-full object-cover" />
